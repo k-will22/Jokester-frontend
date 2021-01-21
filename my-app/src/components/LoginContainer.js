@@ -1,7 +1,7 @@
 import React from "react";
 
 function LoginContainer() {
-    return (console.log("LoginContainer!"))
+    return <h1>Login</h1>
 }
 
 export default LoginContainer
