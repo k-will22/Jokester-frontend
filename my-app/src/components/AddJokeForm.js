@@ -1,28 +1,30 @@
 import React, {useState} from 'react';
 
 function AddJokeForm ({newJoke}) {
-    const [category, setCategory] = useState("")
-    const [joke, setJoke] = useState("")
+    const [formData, setFormData] = useState({ category: "", joke: ""})
+
+    function handleChange (event) {
+      setFormData({...formData, [event.target.name]: event.target.value})
+    }
+    
 
     function handleSubmit(event){
         event.preventDefault()
+        
+        const newJokeObj = formData
+        
+        console.log(newJokeObj)
 
-        const formData = {
-            category,
-            joke
-        }
 
       fetch("http://localhost:3000/jokes", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify(formData),
+            body: JSON.stringify(newJokeObj),
           })
             .then((r) => r.json())
-            .then((newJoke) => {
-
-            });
+            .then(newJoke)
 
     }
 
@@ -30,19 +32,20 @@ function AddJokeForm ({newJoke}) {
         <form onSubmit={handleSubmit} className= "form">
         <h1>Add A Joke</h1>
         <label htmlFor="joke">Your Joke</label>
-        <textarea
+        <input
+        type = "text"
           id="joke"
           name="joke"
-          value={joke}
-          onChange={(event) => setJoke(event.target.value)}
+          value={formData.joke}
+          onChange={handleChange}
         />
 
 <label htmlFor="category">Category</label>
         <select
           name="category"
           id="category"
-          value={category}
-          onChange={(event) => setCategory(event.target.value)}
+          value={formData.category}
+          onChange={handleChange}
         >
           <option value="All">All</option>
           <option value="Misc">Misc</option>
@@ -53,7 +56,7 @@ function AddJokeForm ({newJoke}) {
           <option value="Spooky"> Spooky </option>
         </select>
 
-
+        <button type = "submit">Add Joke</button>
         
         
         </form>

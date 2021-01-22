@@ -1,7 +1,7 @@
 import React from 'react';
 
 function JokeItem ({aJoke}) {
-   const {id, category, joke} = aJoke
+
 
     return (
         <div>
