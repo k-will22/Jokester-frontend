@@ -2,7 +2,7 @@ import React from 'react';
 
 function JokeItem () {
     return (
-        null
+        <h2>Joke Item</h2>
     )
 }
 
