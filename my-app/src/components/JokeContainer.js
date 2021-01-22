@@ -18,13 +18,13 @@ function JokeContainer () {
         setJokes([...jokes, jokeToAdd])
     }
 
-    const renderEachJoke = jokes.map((joke)=> <JokeItem aJoke = {joke} />)
+    const renderEachJoke = jokes.map((joke)=> <JokeItem aJoke = {joke} key={joke.id} />)
 
 
     return (
         <div>
         <div>{renderEachJoke} </div>
-        { <AddJokeForm newJoke = {newJoke} /> }
+        <div>{ <AddJokeForm newJoke = {newJoke} /> }</div>
         </div>
       
     )
