@@ -1,8 +1,11 @@
 import React from 'react';
 
-function addJokeForm () {
+function AddJokeForm () {
     return (
-        null
+        <div>
+        <h1>Add A Joke</h1>
+        <input type="text"></input>
+        </div>
     )
 }
 

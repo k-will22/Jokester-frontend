@@ -2,7 +2,14 @@ import React from 'react';
 
 function JokeItem () {
     return (
-        <h2>Joke Item</h2>
+        <div>
+        <h1>Jokes</h1>
+        <ul>
+            <li>Joke 1</li>
+            <li>Joke 2</li>
+            <li>Joke 3</li>
+        </ul>
+        </div>
     )
 }
 
