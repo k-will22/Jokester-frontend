@@ -2,9 +2,6 @@ import React from 'react';
 
 function MyFavorites () {
     return (
-<<<<<<< HEAD
-        null
-=======
         <div>
         <h1>Favorite Jokes</h1>
         <ul>
@@ -13,7 +10,6 @@ function MyFavorites () {
             <li>Favorite Joke 3</li>
         </ul>
         </div>
->>>>>>> main
     )
 }
 
