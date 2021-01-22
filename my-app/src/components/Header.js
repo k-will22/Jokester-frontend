@@ -1,15 +1,5 @@
 import LoginContainer from "./LoginContainer"
 import React from 'react';
-<<<<<<< HEAD
-
-function Header () {
-return (
-    <LoginContainer />
-)
-}
-
-export default LoginContainer
-=======
 import { Link } from "react-router-dom";
 
 function Header () {
@@ -22,4 +12,3 @@ return (
 }
 
 export default Header
->>>>>>> main
