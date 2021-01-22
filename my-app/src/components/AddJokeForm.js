@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function AddJokeForm () {
+function AddJokeForm ({newJoke}) {
     const [category, setCategory] = useState("")
     const [joke, setJoke] = useState("")
 
@@ -12,7 +12,7 @@ function AddJokeForm () {
             joke
         }
 
-      fetch(`${process.env.REACT_APP_API_BASE_URL}/projects`, {
+      fetch("http://localhost:3000/jokes", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -20,7 +20,7 @@ function AddJokeForm () {
             body: JSON.stringify(formData),
           })
             .then((r) => r.json())
-            .then((newProject) => {
+            .then((newJoke) => {
 
             });
 
@@ -44,6 +44,7 @@ function AddJokeForm () {
           value={category}
           onChange={(event) => setCategory(event.target.value)}
         >
+          <option value="All">All</option>
           <option value="Misc">Misc</option>
           <option value="Pun">Pun</option>
           <option value="Dark">Dark</option>

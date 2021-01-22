@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import AddJokeForm from './AddJokeForm';
 import JokeItem from "./JokeItem"
 
 
@@ -8,16 +9,23 @@ function JokeContainer () {
     const [category, setCategory] = useState("All")
 
     useEffect(()=>{
-        fetch("")
+        fetch("http://localhost:3000/jokes")
         .then(r=> r.json())
         .then(jokesData => setJokes(jokesData))
     }, [])
+
+    function newJoke (jokeToAdd) {
+        setJokes([...jokes, jokeToAdd])
+    }
 
     const renderEachJoke = jokes.map((joke)=> <JokeItem aJoke = {joke} />)
 
 
     return (
+        <div>
         <div>{renderEachJoke} </div>
+        { <AddJokeForm newJoke = {newJoke} /> }
+        </div>
       
     )
 }
