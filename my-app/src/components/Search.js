@@ -2,16 +2,13 @@ import React from 'react';
 
 function Search () {
     return (
-<<<<<<< HEAD
-        null
-=======
-        <div>
-        <h1>Search</h1>
+        <form className="form">
+        <label>Search</label>&nbsp;
         <input type="text"></input>
-        <h1>Filer By</h1>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <label>Filter By</label>&nbsp;
         <input type="text"></input>
-        </div>
->>>>>>> main
+        </form>
     )
 }
 
