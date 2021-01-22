@@ -8,10 +8,18 @@ body {
   font-family: monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-stroke: 1px black;
 }
 
 .header {
-  font-size: 80px;
+  padding: 20px;
+  font-size: 90px;
+  color: deepskyblue;
+  background-color: whitesmoke;
+  
+  border-radius: 35px;
+  box-shadow: 5px 10px black;
+  -webkit-text-stroke: 4px black;
 }
 
 @keyframes wiggle {
@@ -25,10 +33,6 @@ body {
 h1.wiggle {
 display: inline-block;
 animation: wiggle 1.0s infinite;
-}
-
-h1.wiggle:hover {
-animation: none;
 }
 
 .navbar {
@@ -47,12 +51,15 @@ code {
   background-color: silver;
   color: darkslategray;
   transition: color, 1.0s;
+  -webkit-text-stroke: 1px black;
+  outline: 2px solid black;
 }
 
 .border.active {
   background-color: dimgray;
-  color: dodgerblue;
-  border-color: dodgerblue;
+  color: deepskyblue;
+  border-color: deepskyblue;
+  -webkit-text-stroke: 1px black;
 }
 
 ul {
@@ -73,3 +80,4 @@ ul {
   .form {
     padding: 30px;
   }
+  

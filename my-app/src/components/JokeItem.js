@@ -1,17 +1,14 @@
 import React from 'react';
-import ReactAudioPlayer from 'react-audio-player';
 
 function JokeItem () {
 
-    function handleLaugh() {
-        return (
-            <ReactAudioPlayer
-                src="comic007.mp3"
-                autoPlay
-                controls
-            />
-        )
-    }
+        function playAudio() {
+          const audioEl = document.getElementsByClassName("audio-element")[0]
+          const newJokeList = document.querySelector(".newJokeList")
+          const newJoke = "New Joke "
+          newJokeList.append(newJoke)
+          setTimeout(function(){audioEl.play()}, 2000)
+        }
 
     return (
         <div>
@@ -21,12 +18,17 @@ function JokeItem () {
             <li>Joke 2</li>
             <li>Joke 3</li>
         </ul>
-        <button onClick={handleLaugh}>Laugh</button>
-        <ReactAudioPlayer
-                src="comic007.mp3"
-                autoPlay
-                controls
-            />
+        <div>
+        <button onClick={playAudio}>
+          <span>Get New Joke</span>
+        </button>
+        <audio className="audio-element">
+          <source src="http://static1.grsites.com/archive/sounds/comic/comic007.mp3"></source>
+        </audio>
+        <div className="newJokeList">
+
+        </div>
+      </div>
         </div>
     )
 }
