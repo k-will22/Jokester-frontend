@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavBar () {
     return (
-        <div>
-            <Link to="/jokes">Jokes</Link>
-            <Link to="/favorites">Favorites</Link>
-            <Link to="/add">Add Joke</Link>
+        <div className="navbar">
+            <NavLink to="/login" className="border" style={{ textDecoration: 'none' }}>Login</NavLink>&nbsp;
+            <NavLink to="/jokes" className="border" style={{ textDecoration: 'none' }}>Jokes</NavLink>&nbsp;
+            <NavLink to="/favorites" className="border" style={{ textDecoration: 'none' }}>Favorites</NavLink>&nbsp;
+            <NavLink to="/add" className="border" style={{ textDecoration: 'none' }}>Add Joke</NavLink>
         </div>
     )
 }
