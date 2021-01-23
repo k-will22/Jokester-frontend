@@ -20,7 +20,7 @@ body {
   background-image: linear-gradient(90deg, #ffffff 48.25%, #00060a 48.25%, #00060a 50%, #ffffff 50%, #ffffff 98.25%, #00060a 98.25%, #00060a 100%);
   background-size: 114.00px 114.00px;
   border-radius: 52% 48% 49% 51% / 16% 19% 81% 84% ;
-  border: solid firebrick 25px;
+  border: solid darkred 25px;
   -webkit-text-stroke: 4px black;
 }
 
