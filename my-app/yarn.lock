@@ -3834,6 +3834,11 @@
   "resolved" "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz"
   "version" "3.0.0"
 
+"csshake@^1.5.3":
+  "integrity" "sha512-1vSyB+N/rdq7QSfqKs/Aj/LKzWFy3xdWpgEuJ63nJw1DmHDTC4rbzkagH9/aVT5otbX77i1cq99OPDIFJofAkQ=="
+  "resolved" "https://registry.npmjs.org/csshake/-/csshake-1.5.3.tgz"
+  "version" "1.5.3"
+
 "cssnano-preset-default@^4.0.7":
   "integrity" "sha512-x0YHHx2h6p0fCl1zY9L9roD7rnlltugGu7zXSKQx6k2rYw0Hi3IqxcoAGF7u9Q5w1nt7vK0ulxV8Lo+EvllGsA=="
   "resolved" "https://registry.yarnpkg.com/cssnano-preset-default/-/cssnano-preset-default-4.0.7.tgz"
