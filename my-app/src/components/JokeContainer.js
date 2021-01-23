@@ -62,6 +62,8 @@ function JokeContainer () {
         <br></br><br></br>
         <div>{renderEachJoke}</div>
         <div>{ <AddJokeForm newJoke = {newJoke} /> }</div>
+        <div>{renderEachJoke} </div>
+        { <AddJokeForm newJoke = {newJoke} /> }
         </div>
       
     )

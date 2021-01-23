@@ -12,6 +12,11 @@ function JokeItem ({aJoke}) {
         <button>Favorite</button>
         <br></br>
         <br></br>
+        <h1>Jokes</h1>
+        <ul>
+            <li>{aJoke.category}: {aJoke.joke} </li>
+            
+        </ul>
         </div>
     )
 }
