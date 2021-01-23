@@ -5,7 +5,7 @@ import './index.css';
 import App from './components/App';
 import LoginContainer from './components/LoginContainer';
 import Search from './components/Search';
-import JokeItem from './components/JokeItem';
+import JokeContainer from './components/JokeContainer';
 import MyFavorites from './components/MyFavorites';
 import AddJokeForm from './components/AddJokeForm';
 
@@ -15,17 +15,17 @@ ReactDOM.render(
             <App />
         </Route>
         <Switch>
-        <Route path="/login">
+        <Route exact path="/login">
             <LoginContainer />
         </Route>
-        <Route path="/jokes">
+        <Route exact path="/jokes">
             <Search />
-            <JokeItem />
+            <JokeContainer />
         </Route>
-        <Route path="/favorites">
+        <Route exact path="/favorites">
             <MyFavorites />
         </Route>
-        <Route path="/add">
+        <Route exact path="/add">
             <AddJokeForm />
         </Route>
     </Switch>

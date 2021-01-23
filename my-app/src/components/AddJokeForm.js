@@ -39,7 +39,7 @@ function AddJokeForm ({newJoke}) {
           value={formData.joke}
           onChange={handleChange}
         />
-
+&nbsp; &nbsp;
 <label htmlFor="category">Category</label>
         <select
           name="category"
@@ -55,7 +55,7 @@ function AddJokeForm ({newJoke}) {
           <option value="Christmas">Christmas</option>
           <option value="Spooky"> Spooky </option>
         </select>
-
+        &nbsp;
         <button type = "submit">Add Joke</button>
         
         

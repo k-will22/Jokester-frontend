@@ -3,7 +3,9 @@ import React from 'react';
 function Search () {
     return (
         <div>
-        <h1>Search</h1>
+            <br></br>
+            <br></br>
+        <label>Search</label>
         <input type="text"></input>
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         <label>Filter By</label>&nbsp;
