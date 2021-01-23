@@ -1,27 +1,18 @@
 import React from 'react';
+import JokeContainer from "./JokeContainer"
 
-function JokeItem () {
-
-        function playAudio() {
-          const audioEl = document.getElementsByClassName("audio-element")[0]
-          const newJokeList = document.querySelector(".newJokeList")
-          const newJoke = "New Joke "
-          newJokeList.append(newJoke)
-          setTimeout(function(){audioEl.play()}, 2000)
-        }
+function JokeItem ({aJoke}) {
 
     return (
         <div>
-        <button onClick={playAudio}>
-          <span>Get New Joke</span>
-        </button>
-        <audio className="audio-element">
-          <source src="http://static1.grsites.com/archive/sounds/comic/comic007.mp3"></source>
-        </audio>
-        <div className="newJokeList">
-
+        <ul>
+            <li>{aJoke.category} </li>
+            <li>{aJoke.joke}</li>
+        </ul>
+        <button>Favorite</button>
+        <br></br>
+        <br></br>
         </div>
-      </div>
     )
 }
 
