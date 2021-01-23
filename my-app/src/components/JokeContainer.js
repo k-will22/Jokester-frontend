@@ -24,7 +24,7 @@ function JokeContainer () {
     return (
         <div>
         <div>{renderEachJoke} </div>
-        <div>{ <AddJokeForm newJoke = {newJoke} /> }</div>
+        { <AddJokeForm newJoke = {newJoke} /> }
         </div>
       
     )
