@@ -50,7 +50,6 @@ function AddJokeForm ({newJoke}) {
           value={formData.category}
           onChange={handleChange}
         >
-          <option value="All">All</option>
           <option value="Misc">Misc</option>
           <option value="Pun">Pun</option>
           <option value="Dark">Dark</option>
@@ -63,8 +62,8 @@ function AddJokeForm ({newJoke}) {
         
         
         </form>
-        <div className="addedJokes">
-          
+        <div>
+         
         </div>
       </div>
     )
