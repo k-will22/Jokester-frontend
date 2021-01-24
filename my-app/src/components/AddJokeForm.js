@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
+import { useHistory } from "react-router-dom";
 
 function AddJokeForm ({newJoke}) {
     const [formData, setFormData] = useState({ category: "", joke: ""})
+    const history = useHistory()
 
     function handleChange (event) {
       setFormData({...formData, [event.target.name]: event.target.value})
     }
     
-
     function handleSubmit(event){
         event.preventDefault()
         
@@ -27,6 +28,7 @@ function AddJokeForm ({newJoke}) {
             .then(newJoke)
 
             setFormData({ category: "", joke: ""})
+            history.push("/favorites")
 
     }
 
@@ -63,7 +65,7 @@ function AddJokeForm ({newJoke}) {
         
         </form>
         <div>
-         
+       
         </div>
       </div>
     )
