@@ -4,9 +4,8 @@ import JokeItem from "./JokeItem"
 import Search from "./Search"
 
 
-function JokeContainer () {
+function JokeContainer ({index, setIndex}) {
     const [jokes, setJokes] = useState([])
-    const [index, setIndex] = useState(0)
     const [searchTerm, setSearchTerm] = useState("")
     const [category, setCategory] = useState("All")
 

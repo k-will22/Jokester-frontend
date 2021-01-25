@@ -1,13 +1,18 @@
 import React from 'react';
 
-function MyFavorites () {
-    // const id = 1
+function MyFavorites ({addedJoke}) {
 
-    // get request to favorites
-    // returns all favorites
+    const newJokes = addedJoke.map(jk => {
+        return (
+            <div>
+            <ul>
+                <li>{jk.category} - {jk.joke}</li>
+            </ul>
+            </div>
+        )
+    })
+  
 
-    // filter all favorites by user_id === id
-    
     return (
         <div>
         <h1>Favorite Jokes</h1>
@@ -16,6 +21,8 @@ function MyFavorites () {
             <li>Favorite Joke 2</li>
             <li>Favorite Joke 3</li>
         </ul>
+        <h1>Added Jokes</h1>
+        {newJokes}  
         </div>
     )
 }

@@ -1,12 +1,13 @@
 import React from 'react';
 import { NavLink, useHistory } from "react-router-dom";
 
-function NavBar({setLoggedIn}) {
+function NavBar({setLoggedIn, setIndex}) {
 
     const history = useHistory()
 
     function handleLogout() {
         setLoggedIn(false)
+        setIndex(0)
         history.push("/")
     }
 

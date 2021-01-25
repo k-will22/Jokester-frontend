@@ -1,10 +1,10 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-function LoginContainer({setLoggedIn}) {
+function LoginContainer({setLoggedIn, setUser}) {
     const history = useHistory()
-
-    function handleLogin() {
+    
+    function handleLogin(username) {
         setLoggedIn(true)
         history.push("/jokes")
     }
@@ -12,7 +12,7 @@ function LoginContainer({setLoggedIn}) {
     return (
     <div>
     <h1>Login</h1>
-    <input type="text" autocomplete="off"></input>&nbsp;
+    <input type="text" onChange={event => setUser(event.target.value) } autocomplete="off"></input>&nbsp;
     <button onClick={handleLogin}>Login</button>
     </div>
     )

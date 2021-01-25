@@ -115,7 +115,7 @@ ul {
   }
 
   span {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .logout {
@@ -129,3 +129,12 @@ ul {
     border-radius: 25px;
     font-size: 35px;
   }
+
+  h3 {
+    color: dodgerblue;
+  }
+
+  .center {
+    text-align: center;
+  }
+
