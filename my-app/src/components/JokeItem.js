@@ -11,9 +11,12 @@ function JokeItem ({aJoke}) {
     return (
         <div>
         <ul>
-            <li>{aJoke.category} </li>
+            <li>Category: {aJoke.category} </li>
+            <br></br>
             <li>{aJoke.joke}</li>
         </ul>
+        <br></br>
+        <br></br>
         <button onClick={handleFavorite}>Favorite
         <audio className="audio-element">
         <source src="http://static1.grsites.com/archive/sounds/comic/comic007.mp3"></source>
@@ -21,6 +24,7 @@ function JokeItem ({aJoke}) {
         </button>
         <br></br>
         <br></br>
+        <hr style={{marginLeft: 400, marginRight: 400}}/>
         </div>
     )
 }

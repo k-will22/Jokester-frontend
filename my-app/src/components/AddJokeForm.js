@@ -34,9 +34,9 @@ function AddJokeForm ({newJoke}) {
 
     return (
       <div>
-        <form onSubmit={handleSubmit} className= "form">
+        <form onSubmit={handleSubmit} className= "form" autocomplete="off">
         <h1>Add A Joke</h1>
-        <label htmlFor="joke">Your Joke</label>
+        <label htmlFor="joke">Your Joke</label>&nbsp;
         <input
         type = "text"
           id="joke"
@@ -45,7 +45,7 @@ function AddJokeForm ({newJoke}) {
           onChange={handleChange}
         />
 &nbsp; &nbsp;
-<label htmlFor="category">Category</label>
+<label htmlFor="category">Category</label>&nbsp;
         <select
           name="category"
           id="category"
