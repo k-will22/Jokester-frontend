@@ -15,7 +15,7 @@ function Search ({setCategory, setSearchTerm}) {
             <br></br>
             <br></br>
         <label>Search</label>&nbsp;
-        <input onChange={handleeSearch} type="text" ></input>
+        <input onChange={handleeSearch} type="text" autoComplete="off"></input>
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         <label>Filter By Category</label>&nbsp;
         <select onChange={handleCategory}>

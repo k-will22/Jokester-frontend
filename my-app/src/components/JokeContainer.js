@@ -10,9 +10,6 @@ function JokeContainer () {
     const [searchTerm, setSearchTerm] = useState("")
     const [category, setCategory] = useState("All")
 
-    console.log(searchTerm)
-    console.log(category)
-
     useEffect(()=>{
         fetch("http://localhost:3000/jokes")
         .then(r=> r.json())
@@ -22,6 +19,8 @@ function JokeContainer () {
     function newJoke (jokeToAdd) {
         setJokes([...jokes, jokeToAdd])
     }
+
+    <AddJokeForm newJoke = {newJoke} />
 
     const displayJokes = jokes.slice(index[0], index + 1)
 
@@ -42,8 +41,6 @@ function JokeContainer () {
     })
 
     function handleGetJoke() {
-        const audioEl = document.getElementsByClassName("audio-element")[0]
-        setTimeout(function(){audioEl.play()}, 2000)
         setIndex((jokeIndex) => (jokeIndex + 1) % jokes.length)
     }
 
@@ -55,13 +52,10 @@ function JokeContainer () {
         <h1>Jokes</h1>
         <button onClick={handleGetJoke}>
         <span>Get New Joke</span>
-        <audio className="audio-element">
-        <source src="http://static1.grsites.com/archive/sounds/comic/comic007.mp3"></source>
-        </audio>
         </button>
         <br></br><br></br>
+        <hr style={{marginLeft: 400, marginRight: 400}}/>
         <div>{renderEachJoke}</div>
-        <div>{ <AddJokeForm newJoke = {newJoke} /> }</div>
         </div>
       
     )

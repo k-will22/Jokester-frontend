@@ -1,13 +1,35 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import FavoriteItem from "./FavoriteItem"
 
-function MyFavorites () {
+function MyFavorites ({favorite}) {
+    const [allFavorites, setAllFavorites] = useState([])
+
+    //fetch here and add joke to fav table 
+
+    useEffect(() => {
+        fetch("http://localhost:3000/favorites")
+        .then(r=>r.json())
+        .then(arrayOfFavorites => setAllFavorites(arrayOfFavorites))
+    }, [])
+
+    function deleteFav (favToDelete) {
+        const newFavArray = allFavorites.filter((fav) => fav.id !== favToDelete.id)
+        setAllFavorites(newFavArray)
+    }
+
+    
+
+   const a = allFavorites.map((fav) => <FavoriteItem key = {fav.id} fav = {fav} deleteFav = {deleteFav}/>);
+
+
+   
+ 
+
     return (
         <div>
         <h1>Favorite Jokes</h1>
         <ul>
-            <li>Favorite Joke 1</li>
-            <li>Favorite Joke 2</li>
-            <li>Favorite Joke 3</li>
+           {a}
         </ul>
         </div>
     )
