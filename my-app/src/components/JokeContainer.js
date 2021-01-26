@@ -4,14 +4,10 @@ import JokeItem from "./JokeItem"
 import Search from "./Search"
 
 
-function JokeContainer () {
+function JokeContainer ({index, setIndex}) {
     const [jokes, setJokes] = useState([])
-    const [index, setIndex] = useState(0)
     const [searchTerm, setSearchTerm] = useState("")
     const [category, setCategory] = useState("All")
-
-    console.log(searchTerm)
-    console.log(category)
 
     useEffect(()=>{
         fetch("http://localhost:3000/jokes")
@@ -22,6 +18,8 @@ function JokeContainer () {
     function newJoke (jokeToAdd) {
         setJokes([...jokes, jokeToAdd])
     }
+
+    <AddJokeForm newJoke = {newJoke} />
 
     const displayJokes = jokes.slice(index[0], index + 1)
 
@@ -55,8 +53,8 @@ function JokeContainer () {
         <span>Get New Joke</span>
         </button>
         <br></br><br></br>
+        <hr style={{marginLeft: 400, marginRight: 400}}/>
         <div>{renderEachJoke}</div>
-        <div>{ <AddJokeForm newJoke = {newJoke} /> }</div>
         </div>
       
     )

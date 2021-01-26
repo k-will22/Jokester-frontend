@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import { useHistory } from "react-router-dom";
 
-function AddJokeForm ({newJoke}) {
+function AddJokeForm ({newJoke, addedJoke, setAddedJoke}) {
     const [formData, setFormData] = useState({ category: "", joke: ""})
     const history = useHistory()
+
 
     function handleChange (event) {
       setFormData({...formData, [event.target.name]: event.target.value})
@@ -13,7 +14,7 @@ function AddJokeForm ({newJoke}) {
         event.preventDefault()
         
         const newJokeObj = formData
-       
+       setAddedJoke([...addedJoke, newJokeObj])
         console.log(newJokeObj)
 
 
@@ -26,7 +27,6 @@ function AddJokeForm ({newJoke}) {
           })
             .then((r) => r.json())
             .then(newJoke)
-
             setFormData({ category: "", joke: ""})
             history.push("/favorites")
 
@@ -34,9 +34,9 @@ function AddJokeForm ({newJoke}) {
 
     return (
       <div>
-        <form onSubmit={handleSubmit} className= "form">
+        <form onSubmit={handleSubmit} className= "form" autoComplete="off">
         <h1>Add A Joke</h1>
-        <label htmlFor="joke">Your Joke</label>
+        <label htmlFor="joke">Your Joke</label>&nbsp;
         <input
         type = "text"
           id="joke"
@@ -45,7 +45,7 @@ function AddJokeForm ({newJoke}) {
           onChange={handleChange}
         />
 &nbsp; &nbsp;
-<label htmlFor="category">Category</label>
+<label htmlFor="category">Category</label>&nbsp;
         <select
           name="category"
           id="category"
@@ -61,12 +61,7 @@ function AddJokeForm ({newJoke}) {
         </select>
         &nbsp;
         <button type = "submit">Add Joke</button>
-        
-        
         </form>
-        <div>
-       
-        </div>
       </div>
     )
 }
