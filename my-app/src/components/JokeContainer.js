@@ -19,7 +19,7 @@ function JokeContainer ({index, setIndex}) {
         setJokes([...jokes, jokeToAdd])
     }
 
-    <AddJokeForm newJoke = {newJoke} />
+    <AddJokeForm newJoke={newJoke} />
 
     const displayJokes = jokes.slice(index[0], index + 1)
 

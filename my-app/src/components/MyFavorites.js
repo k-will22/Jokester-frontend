@@ -15,12 +15,22 @@ function MyFavorites ({addedJoke, setAddedJoke, favorite}) {
         setAllFavorites(newFavArray)
     }
 
-    function handleDelete(addedJokeToDelete) {
-        
-        const newJokeArray = addedJoke.filter((jk) => jk.joke !== addedJokeToDelete.joke)
+    function handleDelete(event) {
+        console.log(event.target.value)
+        const newJokeArray = addedJoke.filter((jk) => jk.joke !== event.target.value)
         setAddedJoke(newJokeArray)
-        //fetch 
-        // fetch(`http://localhost:300/jokes/${}`)
+
+        fetch("http://localhost:3000/jokes")
+        .then(r=> r.json())
+        .then(jokeArray => {
+            let deletedJoke = jokeArray.filter((jk) => jk.joke === event.target.value)
+        
+            let jokeId = deletedJoke[0].id
+
+            fetch(`http://localhost:3000/jokes/${jokeId}`, {
+            method: "DELETE",
+            });
+        })
 
         
     }
@@ -41,7 +51,7 @@ function MyFavorites ({addedJoke, setAddedJoke, favorite}) {
                <div>
                <ul>
                    <li>{jk.category} - {jk.joke}</li>
-                   <button onClick={handleDelete}> delete </button>
+                   <button value={jk.joke} onClick={handleDelete}> delete </button>
                    <button>edit</button>
                </ul>
                </div>

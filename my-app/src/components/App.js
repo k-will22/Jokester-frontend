@@ -12,7 +12,7 @@ function App() {
   const [index, setIndex] = useState(0)
   const [user, setUser] = useState("")
   const [addedJoke, setAddedJoke] = useState([])
-
+  
   console.log(addedJoke)
 
   return (

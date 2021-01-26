@@ -5,7 +5,6 @@ function AddJokeForm ({newJoke, addedJoke, setAddedJoke}) {
     const [formData, setFormData] = useState({ category: "", joke: ""})
     const history = useHistory()
 
-
     function handleChange (event) {
       setFormData({...formData, [event.target.name]: event.target.value})
     }
