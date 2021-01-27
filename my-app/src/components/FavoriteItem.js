@@ -13,8 +13,10 @@ function FavoriteItem ({fav, deleteFav}) {
         .then(deleteFav)
     }
     return (
-        <div>
+        <div className = "favorite">
             {fav.joke}
+            <br></br>
+            <br></br>
             <button onClick = {handleFavDeleteButton}>Not Funny Anymore</button>
         </div>
     )

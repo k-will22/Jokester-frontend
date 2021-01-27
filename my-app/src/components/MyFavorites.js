@@ -85,7 +85,9 @@ function MyFavorites ({addedJoke, setAddedJoke, favorite}) {
    console.log(addedJoke)
        const newJokes = addedJoke.map(jk => {
            return (
-               <div key={jk.joke}>
+               <div>
+               <div className = "added joke" key={jk.joke} style={{marginLeft: 400, marginRight: 400}}>
+                <br></br>
                <ul>
                    <li>{jk.joke}</li>
                </ul>
@@ -93,9 +95,9 @@ function MyFavorites ({addedJoke, setAddedJoke, favorite}) {
                     <br></br>
                    <input onChange={handleChange} type="text"></input>&nbsp;
                    <button value={jk.joke} onClick={handleEdit}>Edit</button>
-
-            
                <br></br>
+               <br></br>           
+               </div>
                <br></br>
                </div>
            )
@@ -105,7 +107,7 @@ function MyFavorites ({addedJoke, setAddedJoke, favorite}) {
 
     return (
         <div>
-            <div>
+        <div>
         <h1>Favorite Jokes</h1>
         <ul>
            {a}

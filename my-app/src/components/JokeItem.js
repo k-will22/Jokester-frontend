@@ -33,21 +33,23 @@ function JokeItem ({aJoke}) {
     }
 
     return (
-        <div className="quote">
+        <div>
+        <div className="quote" style={{marginLeft: 400, marginRight: 400}}>
         <ul>
             <li>{aJoke.category} </li>
             <li>{aJoke.joke}</li>
         </ul>
+        <br></br>
         {wasItFavorited ? <button>Already Favorited</button> : 
         <button onClick = {handleFavoriteButton}>favorite
         <audio className="audio-element">
         <source src="http://static1.grsites.com/archive/sounds/comic/comic007.mp3"></source>
         </audio>
         </button> }
-
         <br></br>
         <br></br>
-        <hr style={{marginLeft: 400, marginRight: 400}}/>
+        </div>
+        <br></br>
         </div>
     )
 }
