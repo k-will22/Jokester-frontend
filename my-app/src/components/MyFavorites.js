@@ -40,8 +40,7 @@ function MyFavorites ({addedJoke, setAddedJoke, favorite}) {
 
     function handleEdit(event) {
         event.preventDefault()
-        console.log(event.target.value)
-        
+        console.log(event.target.value)     
     
        console.log(edJoke)
         const newJokeArray = addedJoke.filter((jk) => jk.joke !== event.target.value)
