@@ -53,7 +53,6 @@ function JokeContainer ({index, setIndex}) {
         <span>Get New Joke</span>
         </button>
         <br></br><br></br>
-        <hr style={{marginLeft: 400, marginRight: 400}}/>
         <div>{renderEachJoke}</div>
         </div>
       

@@ -166,6 +166,7 @@ ul {
   }
 
   div.favorite {
+<<<<<<< HEAD
     border-width: thick;    
     border: 10px double yellow;
     border-radius: 8px;
@@ -209,4 +210,14 @@ ul {
   @keyframes changeBackgroundColor {
     from {background-color: black;}
     to {background-color: rgb(0, 23, 126);}
+=======
+    border: 5px dotted greenyellow;
+    padding: 25px;
+  }
+
+  div.added.joke {
+    background-color: dimgray;
+    border-radius: 35px;
+    border: double black;
+>>>>>>> bdd8171b86a5fd38bcb339fc36b2d518855921e6
   }
