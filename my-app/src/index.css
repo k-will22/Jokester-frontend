@@ -69,6 +69,11 @@ code {
   border-radius: 25px;
 }
 
+.border:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
 .border.active {
   background-color: dimgray;
   color: dodgerblue;
@@ -157,16 +162,52 @@ ul {
 
   @keyframes changeColor {
     from {border-color: yellow;}
-    to {border-color: magenta;}
+    to {border-color: rgb(255, 0, 140);}
   }
 
   div.favorite {
-    border: 5px dotted greenyellow;
     padding: 25px;
+    border-width: thick;    
+    border: 10px double yellow;
+    border-radius: 8px;
+    animation-name: changeColor;
+    animation-duration: 1.75s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes changeColor {
+    from {border-color: yellow;}
+    to {border-color:  rgb(255, 0, 140);}
   }
 
   div.added.joke {
-    background-color: dimgray;
-    border-radius: 35px;
-    border: double black;
+    border-width: thick;    
+    border: 10px double yellow;
+    border-radius: 8px;
+    animation-name: changeColor;
+    animation-duration: 1.75s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    
+    
+  }
+
+  @keyframes changeColor {
+    from {border-color: yellow;}
+    to {border-color:  rgb(255, 0, 140);}
+  }
+
+  form.form {
+    background-color:aqua;
+    animation-name: changeBackgroundColor;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    border: 10px dotted lime;
+  }
+
+  @keyframes changeBackgroundColor {
+    from {background-color: black;}
+    to {background-color: rgb(0, 23, 126);}
   }

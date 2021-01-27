@@ -33,7 +33,8 @@ function AddJokeForm ({newJoke, addedJoke, setAddedJoke}) {
 
     return (
       <div>
-        <form onSubmit={handleSubmit} className= "form" autoComplete="off">
+        <br></br>
+        <form onSubmit={handleSubmit} className= "form" autoComplete="off" style={{marginLeft: 200, marginRight: 200}}>
         <h1>Add A Joke</h1>
         <label htmlFor="joke">Your Joke</label>&nbsp;
         <input
@@ -59,8 +60,9 @@ function AddJokeForm ({newJoke, addedJoke, setAddedJoke}) {
           <option value="Spooky"> Spooky </option>
         </select>
         &nbsp;
-        <button type = "submit">Add Joke</button>
+        <br></br><br></br><button type = "submit">Add Joke</button>
         </form>
+        <br></br><br></br>
       </div>
     )
 }
