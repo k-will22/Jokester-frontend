@@ -73,7 +73,7 @@ function MyFavorites ({addedJoke, setAddedJoke, favorite}) {
    
        const newJokes = addedJoke.map(jk => {
            return (
-               <div key={jk.joke}>
+               <div className = "added joke" key={jk.joke}>
                <ul>
                    <li>{jk.category} - {jk.joke}</li>
                </ul>
