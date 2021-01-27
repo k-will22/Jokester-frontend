@@ -5,6 +5,8 @@ function MyFavorites ({addedJoke, setAddedJoke, favorite}) {
     const [allFavorites, setAllFavorites] = useState([])
     const [edJoke, setEdJoke] = useState("")
 
+
+
     useEffect(() => {
         fetch("http://localhost:3000/favorites")
         .then(r=>r.json())
@@ -31,35 +33,46 @@ function MyFavorites ({addedJoke, setAddedJoke, favorite}) {
         })
     }
 
-    function handleEdit(event, edJoke) {
-        event.preventDefault()
-        console.log(edJoke)
+    function handleChange(event) {
         console.log(event.target.value)
-       
-        // const newJokeArray = addedJoke.filter((jk) => jk.joke !== event.target.value)
-        // setAddedJoke(newJokeArray)
+        setEdJoke({category: "", joke: event.target.value})
+    }
 
-        // fetch("http://localhost:3000/jokes")
-        // .then(r=> r.json())
-        // .then(jokeArray => {
-        //     const editedtJoke = jokeArray.filter((jk) => jk.joke === event.target.value)
+    function handleEdit(event) {
+        event.preventDefault()
+        console.log(event.target.value)
+        
+    
+       console.log(edJoke)
+        const newJokeArray = addedJoke.filter((jk) => jk.joke !== event.target.value)
+        console.log(newJokeArray)
+        setAddedJoke([...newJokeArray, edJoke])
+        console.log(addedJoke)
+    
 
-        //     const edited = {
-        //         joke: event.target.value
-        //     }
+        fetch("http://localhost:3000/jokes")
+        .then(r=> r.json())
+        .then(jokeArray => {
+            const editedJoke = jokeArray.filter((jk) => jk.joke === event.target.value)
+            console.log(editedJoke)
+            const edited = {
+                joke: edJoke
+            }
+
+            console.log(edited)
   
-        // fetch(`http://localhost:3000/jokes/${editedJoke[0].id}`, {
-        //     method: "PATCH",
-        //     headers: {
-        //       'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(edited),
-        //   })
-        //   .then(response => response.json())
-        //   .then(data => {
-        //     console.log('Success:', data);
-        //   })
-        // })
+        fetch(`http://localhost:3000/jokes/${editedJoke[0].id}`, {
+            method: "PATCH",
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(edited),
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+          })
+        })
     }
 
    const a = allFavorites.map((fav) => {
@@ -70,18 +83,18 @@ function MyFavorites ({addedJoke, setAddedJoke, favorite}) {
    </div>);
    })
 
-   
+   console.log(addedJoke)
        const newJokes = addedJoke.map(jk => {
            return (
                <div className = "added joke" key={jk.joke}>
                <ul>
-                   <li>{jk.category} - {jk.joke}</li>
+                   <li>{jk.joke}</li>
                </ul>
                <button value={jk.joke} onClick={handleDelete}> delete </button>
-               <form onSubmit={handleEdit}>
-                   <input onChange={event => setEdJoke(event.target.value)} type="text"></input>&nbsp;
-                   <button type="submit">Edit</button>
-               </form>
+                    <br></br>
+                   <input onChange={handleChange} type="text"></input>&nbsp;
+                   <button value={jk.joke} onClick={handleEdit}>Edit</button>
+
             
                <br></br>
                <br></br>
