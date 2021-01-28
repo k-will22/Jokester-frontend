@@ -77,7 +77,7 @@ function MyFavorites ({addedJoke, setAddedJoke, favorite}) {
    const a = allFavorites.map((fav) => {
    return ( 
        <div>
-   <FavoriteItem key = {fav.id} fav = {fav} deleteFav = {deleteFav}/>
+   <FavoriteItem key = {fav.id} fav = {fav} deleteFav = {deleteFav} />
    <br></br>
    </div>);
    })

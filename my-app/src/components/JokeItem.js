@@ -40,7 +40,11 @@ function JokeItem ({aJoke}) {
             <li>{aJoke.joke}</li>
         </ul>
         <br></br>
-        {wasItFavorited ? <button>Already Favorited</button> : 
+        {wasItFavorited ? <button>Already Favorited
+        <audio className="audio-element">
+        <source src="http://static1.grsites.com/archive/sounds/comic/comic007.mp3"></source>
+        </audio>
+        </button> : 
         <button onClick = {handleFavoriteButton}>favorite
         <audio className="audio-element">
         <source src="http://static1.grsites.com/archive/sounds/comic/comic007.mp3"></source>
